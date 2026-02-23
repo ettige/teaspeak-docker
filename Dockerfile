@@ -8,7 +8,7 @@ RUN adduser --disabled-login --gecos "" teaspeak
 WORKDIR /opt/teaspeak
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends curl tar bash ca-certificates ffmpeg && \
+    apt-get install -y --no-install-recommends curl tar bash ca-certificates ffmpeg openssl && \
     rm -rf /var/lib/apt/lists/*
 
 RUN TEA_VERSION=$(curl -s https://repo.teaspeak.de/server/linux/amd64_stable/latest) && \
